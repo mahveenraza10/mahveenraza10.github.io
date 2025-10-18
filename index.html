@@ -21,7 +21,7 @@
     header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--border);background:rgba(255,245,247,.8);z-index:10}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .links{display:flex;gap:18px;align-items:center}
+    .links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--paper);color:var(--text);box-shadow:var(--shadow);text-decoration:none}
     .btn.primary{background:var(--accent);border-color:transparent;color:#fff}
     section{padding:64px 0}
@@ -34,9 +34,13 @@
     @media(min-width:760px){.cols-2{grid-template-columns:1fr 1fr}}
     ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:8px}
     ul.clean li{display:flex;gap:10px}
-    .dot{width:8px;height:8px;border-radius:999px;background:var(--ring);margin-top:10px}
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--ring);margin-top:10px;flex-shrink:0}
     footer{padding:36px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted)}
     .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    /* small status badge */
+    .badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--border);background:#faf5ff;color:#5b21b6}
+    /* timeline date style */
+    .time{font-weight:600;color:#374151;margin-right:6px}
   </style>
 </head>
 <body>
@@ -47,6 +51,9 @@
         <a href="#achievements">Achievements</a>
         <a href="#contributions">Contributions</a>
         <a href="#research">Research</a>
+        <a href="#articles">Articles</a>
+        <a href="#papers">Papers</a>
+        <a href="#timeline">Timeline</a>
         <a href="#media">Media</a>
         <a href="#news">News</a>
         <a href="#interests">Interests</a>
@@ -122,7 +129,71 @@
       </div>
     </section>
 
-    <!-- New MEDIA section for article + podcast -->
+    <!-- NEW: ARTICLES (space for blog posts, Medium, school newspaper, etc.) -->
+    <section id="articles">
+      <h2>Articles</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <strong>Placeholder Title</strong>
+          <p>1–2 line summary of the article. Keep it short; link to full piece.</p>
+          <p><a class="btn" href="#" target="_blank" rel="noopener">Read</a></p>
+        </div>
+        <div class="card">
+          <strong>Placeholder Title</strong>
+          <p>Short description. This card can point to Medium, school paper, or personal blog.</p>
+          <p><a class="btn" href="#" target="_blank" rel="noopener">Read</a></p>
+        </div>
+      </div>
+      <!-- Tip: add new cards here as you publish more. -->
+    </section>
+
+    <!-- NEW: PAPERS SUBMITTED -->
+    <section id="papers">
+      <h2>Papers Submitted</h2>
+      <div class="card">
+        <ul class="clean">
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Paper Title Placeholder</strong> — <em>Target venue</em>
+              <div><span class="badge">Submitted</span> <!-- change to Accepted/Under Review/Revised as needed --></div>
+              <p>1–2 lines: what it’s about and your role (e.g., “co-author; experiments + writing”).</p>
+              <!-- <a href="#" target="_blank" rel="noopener">Preprint / arXiv</a> -->
+            </div>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Second Paper Title Placeholder</strong> — <em>Target venue</em>
+              <div><span class="badge">Under Review</span></div>
+              <p>Brief summary of contribution and status.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NEW: TIMELINE (you can paste dated items later) -->
+    <section id="timeline">
+      <h2>Timeline</h2>
+      <div class="card">
+        <ul class="clean">
+          <!-- Keep the most recent 5–6 visible -->
+          <li><span class="dot"></span><span class="time">Sep 2025</span> Started Grade 10; joined robotics club.</li>
+          <li><span class="dot"></span><span class="time">Aug 2025</span> Published AI Vaccines explainer on Medium.</li>
+          <li><span class="dot"></span><span class="time">Jul 2025</span> Volunteered at library coding workshop.</li>
+        </ul>
+        <details style="margin-top:8px">
+          <summary>Show older updates</summary>
+          <ul class="clean" style="margin-top:10px">
+            <li><span class="dot"></span><span class="time">Jun 2025</span> Placeholder older item.</li>
+            <li><span class="dot"></span><span class="time">May 2025</span> Placeholder older item.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <!-- MEDIA -->
     <section id="media">
       <h2>Media</h2>
       <div class="grid cols-2">
