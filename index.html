@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mahveen Raza · Student Portfolio</title>
-  <meta name="description" content="Simple, professional student website for Mahveen Raza (HWDSB, Hamilton, Canada): achievements, contributions, research, news, and interests." />
+  <meta name="description" content="Simple, professional student website for Mahveen Raza (HWDSB, Hamilton, Canada): achievements, contributions, media, timeline, and interests." />
   <style>
     :root{
       --bg: #fff5f7;
@@ -32,15 +32,15 @@
     .card{background:var(--paper);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:18px}
     .grid{display:grid;gap:16px}
     @media(min-width:760px){.cols-2{grid-template-columns:1fr 1fr}}
+    @media(min-width:760px){.cols-3{grid-template-columns:1fr 1fr 1fr}}
     ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:8px}
     ul.clean li{display:flex;gap:10px}
     .dot{width:8px;height:8px;border-radius:999px;background:var(--ring);margin-top:10px;flex-shrink:0}
     footer{padding:36px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted)}
     .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    /* small status badge */
     .badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--border);background:#faf5ff;color:#5b21b6}
-    /* timeline date style */
     .time{font-weight:600;color:#374151;margin-right:6px}
+    .month-title{font-weight:700;margin-bottom:8px}
   </style>
 </head>
 <body>
@@ -50,12 +50,10 @@
       <nav class="links">
         <a href="#achievements">Achievements</a>
         <a href="#contributions">Contributions</a>
-        <a href="#research">Research</a>
         <a href="#articles">Articles</a>
         <a href="#papers">Papers</a>
         <a href="#timeline">Timeline</a>
         <a href="#media">Media</a>
-        <a href="#news">News</a>
         <a href="#interests">Interests</a>
         <a href="#contact">Contact</a>
         <a class="btn primary" href="#resume">Resume</a>
@@ -70,11 +68,9 @@
       <p>I’m a high school student in the Hamilton-Wentworth District School Board (HWDSB), located in Hamilton, Ontario, Canada. I enjoy building small, useful projects and learning new skills in technology and science. I’m currently looking for opportunities to learn, volunteer, and contribute.</p>
       <div class="btnrow">
         <a class="btn" href="#contact">Contact Me</a>
-        <!-- Quick links to your Medium + Podcast -->
+        <!-- Removed: "See my podcast" -->
         <a class="btn" target="_blank" rel="noopener"
            href="https://medium.com/@mahveen.raza10/how-ai-vaccines-work-fine-tuning-prompt-injection-defence-and-red-teaming-to-keep-ai-safe-3b4281babd62">Read my Medium article</a>
-        <a class="btn" target="_blank" rel="noopener"
-           href="https://www.thespec.com/news/hamilton-region/from-concept-to-airwaves-student-led-podcast-amplifies-voices-and-builds-community-at-bellmoore-elementary/article_4f629462-0136-5b62-a397-abd919312310.html">See my podcast</a>
       </div>
     </section>
 
@@ -114,22 +110,9 @@
       </div>
     </section>
 
-    <section id="research">
-      <h2>Research & Projects</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <strong>AI Vaccine Research</strong>
-          <p>Explored how artificial intelligence could assist vaccine discovery, focusing on data analysis and prediction models.</p>
-          <p><a href="https://medium.com/@mahveen.raza10/how-ai-vaccines-work-fine-tuning-prompt-injection-defence-and-red-teaming-to-keep-ai-safe-3b4281babd62" target="_blank" rel="noopener">Read the full article on Medium</a></p>
-        </div>
-        <div class="card">
-          <strong>Green AI Project</strong>
-          <p>Studied energy-efficient AI models and methods to reduce carbon footprint in machine learning systems.</p>
-        </div>
-      </div>
-    </section>
+    <!-- REMOVED: Research section -->
 
-    <!-- NEW: ARTICLES (space for blog posts, Medium, school newspaper, etc.) -->
+    <!-- ARTICLES -->
     <section id="articles">
       <h2>Articles</h2>
       <div class="grid cols-2">
@@ -144,10 +127,9 @@
           <p><a class="btn" href="#" target="_blank" rel="noopener">Read</a></p>
         </div>
       </div>
-      <!-- Tip: add new cards here as you publish more. -->
     </section>
 
-    <!-- NEW: PAPERS SUBMITTED -->
+    <!-- PAPERS SUBMITTED -->
     <section id="papers">
       <h2>Papers Submitted</h2>
       <div class="card">
@@ -156,9 +138,8 @@
             <span class="dot"></span>
             <div>
               <strong>Paper Title Placeholder</strong> — <em>Target venue</em>
-              <div><span class="badge">Submitted</span> <!-- change to Accepted/Under Review/Revised as needed --></div>
+              <div><span class="badge">Submitted</span></div>
               <p>1–2 lines: what it’s about and your role (e.g., “co-author; experiments + writing”).</p>
-              <!-- <a href="#" target="_blank" rel="noopener">Preprint / arXiv</a> -->
             </div>
           </li>
           <li>
@@ -173,27 +154,56 @@
       </div>
     </section>
 
-    <!-- NEW: TIMELINE (you can paste dated items later) -->
+    <!-- TIMELINE (expanded; months starting August 2025) -->
     <section id="timeline">
       <h2>Timeline</h2>
-      <div class="card">
-        <ul class="clean">
-          <!-- Keep the most recent 5–6 visible -->
-          <li><span class="dot"></span><span class="time">Sep 2025</span> Started Grade 10; joined robotics club.</li>
-          <li><span class="dot"></span><span class="time">Aug 2025</span> Published AI Vaccines explainer on Medium.</li>
-          <li><span class="dot"></span><span class="time">Jul 2025</span> Volunteered at library coding workshop.</li>
-        </ul>
-        <details style="margin-top:8px">
-          <summary>Show older updates</summary>
-          <ul class="clean" style="margin-top:10px">
-            <li><span class="dot"></span><span class="time">Jun 2025</span> Placeholder older item.</li>
-            <li><span class="dot"></span><span class="time">May 2025</span> Placeholder older item.</li>
+      <!-- Tip: add items under each month. Keep most recent months on top. -->
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="month-title">October 2025</div>
+          <ul class="clean">
+            <li><span class="dot"></span> Placeholder item (add your update here).</li>
+            <li><span class="dot"></span> Placeholder item.</li>
           </ul>
-        </details>
+        </div>
+        <div class="card">
+          <div class="month-title">September 2025</div>
+          <ul class="clean">
+            <li><span class="dot"></span> Started Grade 10; joined robotics club.</li>
+            <li><span class="dot"></span> Placeholder item.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="month-title">August 2025</div>
+          <ul class="clean">
+            <li><span class="dot"></span> Published AI Vaccines explainer on Medium.</li>
+            <li><span class="dot"></span> Began learning robotics coding.</li>
+          </ul>
+        </div>
+
+        <!-- Duplicate these month blocks to extend the timeline (future months or earlier months) -->
+        <div class="card">
+          <div class="month-title">November 2025</div>
+          <ul class="clean">
+            <li><span class="dot"></span> Placeholder item.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="month-title">December 2025</div>
+          <ul class="clean">
+            <li><span class="dot"></span> Placeholder item.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="month-title">January 2026</div>
+          <ul class="clean">
+            <li><span class="dot"></span> Placeholder item.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- MEDIA -->
+    <!-- MEDIA (podcast card removed) -->
     <section id="media">
       <h2>Media</h2>
       <div class="grid cols-2">
@@ -203,35 +213,11 @@
           <p><a class="btn" target="_blank" rel="noopener"
                 href="https://medium.com/@mahveen.raza10/how-ai-vaccines-work-fine-tuning-prompt-injection-defence-and-red-teaming-to-keep-ai-safe-3b4281babd62">Read on Medium</a></p>
         </div>
-        <div class="card">
-          <strong>Podcast</strong>
-          <p>Student-led podcast featuring community voices and school projects.</p>
-          <p><a class="btn" target="_blank" rel="noopener"
-                href="https://www.thespec.com/news/hamilton-region/from-concept-to-airwaves-student-led-podcast-amplifies-voices-and-builds-community-at-bellmoore-elementary/article_4f629462-0136-5b62-a397-abd919312310.html">My podcast</a></p>
-          <!-- TODO: Replace the link above with your real podcast URL (Spotify/YouTube/Apple/etc.) -->
-        </div>
+        <!-- Add more media features as cards here if needed -->
       </div>
     </section>
 
-    <section id="news">
-      <h2>News & Updates</h2>
-      <div class="card">
-        <p><em>Latest monthly updates and announcements will appear here.</em></p>
-        <ul class="clean">
-          <li><span class="dot"></span> <strong>August 2025:</strong> Started learning robotics coding, building and programming simple robots.</li>
-          <li><span class="dot"></span> <strong>August 2025:</strong> Published <a target="_blank" rel="noopener" href="https://medium.com/@mahveen.raza10/how-ai-vaccines-work-fine-tuning-prompt-injection-defence-and-red-teaming-to-keep-ai-safe-3b4281babd62">“How AI Vaccines Work”</a> on Medium.</li>
-          <li><span class="dot"></span> <strong>August 2025:</strong> Green AI project, AI vaccine project, library volunteer work.</li>
-          <li><span class="dot"></span> <strong>July 2025:</strong> Library volunteer work.</li>
-          <li>
-            <span class="dot"></span>
-            <strong>Feature:</strong>
-            <a href="https://www.thespec.com/news/hamilton-region/from-concept-to-airwaves-student-led-podcast-amplifies-voices-and-builds-community-at-bellmoore-elementary/article_4f629462-0136-5b62-a397-abd919312310.html" target="_blank" rel="noopener">
-              Hamilton Spectator — “From concept to airwaves: student-led podcast…”
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <!-- REMOVED: News & Updates section -->
 
     <section id="interests">
       <h2>Interests & Hobbies</h2>
