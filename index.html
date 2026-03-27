@@ -3,289 +3,722 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mahveen Raza · Student Portfolio</title>
-  <meta name="description" content="Simple, professional student website for Mahveen Raza (HWDSB, Hamilton, Canada): Achievements, Contributions, Latest Blog Posts, Timeline, and interests." />
+  <title>Mahveen Raza · Research Portfolio</title>
+  <meta name="description" content="Research portfolio of Mahveen Raza — AI safety, carbon literacy, generative AI bias. HWDSB, Hamilton, Canada." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg: #fff5f7;
-      --paper: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #7c3aed;
-      --border: #f1e4ea;
-      --ring: #f472b6;
-      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+    :root {
+      --bg:      #f7f6f2;
+      --paper:   #ffffff;
+      --ink:     #1a1814;
+      --muted:   #6b6760;
+      --accent:  #1a3a5c;
+      --accent2: #b84c2a;
+      --rule:    #dedad3;
+      --tag-bg:  #edf2f7;
+      --tag-fg:  #1a3a5c;
+      --shadow:  0 1px 3px rgba(0,0,0,.06), 0 6px 20px rgba(0,0,0,.07);
     }
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;background:var(--bg);color:var(--text)}
-    .container{max-width:920px;margin:0 auto;padding:0 16px}
-    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--border);background:rgba(255,245,247,.8);z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--paper);color:var(--text);box-shadow:var(--shadow);text-decoration:none}
-    .btn.primary{background:var(--accent);border-color:transparent;color:#fff}
-    section{padding:64px 0}
-    h1{font-size:clamp(28px,4.5vw,42px);margin:8px 0 0}
-    h2{font-size:clamp(22px,3.5vw,28px);margin:0 0 16px}
-    p{margin:0 0 10px;color:var(--muted)}
-    .pill{display:inline-block;font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--border);color:#7a2e47;background:#ffe7ef}
-    .card{background:var(--paper);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:18px}
-    .grid{display:grid;gap:16px}
-    @media(min-width:760px){.cols-2{grid-template-columns:1fr 1fr}}
-    @media(min-width:760px){.cols-3{grid-template-columns:1fr 1fr 1fr}}
-    ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-    ul.clean li{display:flex;gap:10px}
-    .dot{width:8px;height:8px;border-radius:999px;background:var(--ring);margin-top:10px;flex-shrink:0}
-    footer{padding:36px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted)}
-    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--border);background:#faf5ff;color:#5b21b6}
-    .time{font-weight:600;color:#374151;margin-right:6px}
-    .month-title{font-weight:700;margin-bottom:8px}
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    /* ── LAYOUT ── */
+    .wrap   { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+    .wrap-lg { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(247, 246, 242, 0.92);
+      backdrop-filter: blur(10px) saturate(160%);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 58px; gap: 16px;
+    }
+    .brand {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px; color: var(--ink);
+      text-decoration: none; letter-spacing: -.01em;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex; align-items: center;
+      gap: 0; flex-wrap: wrap;
+    }
+    .nav-links a {
+      font-size: 13px; font-weight: 400;
+      color: var(--muted); text-decoration: none;
+      padding: 6px 11px; border-radius: 6px;
+      transition: color .15s, background .15s;
+    }
+    .nav-links a:hover { color: var(--ink); background: rgba(0,0,0,.05); }
+    .nav-links .cta {
+      font-weight: 600; color: var(--accent2);
+      border: 1px solid var(--accent2);
+      border-radius: 6px; padding: 5px 12px;
+      margin-left: 6px; font-size: 13px;
+      text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+    .nav-links .cta:hover { background: var(--accent2); color: #fff; }
+
+    /* ── HERO ── */
+    #home {
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    @media (min-width: 640px) {
+      .hero-grid { grid-template-columns: 1fr auto; align-items: start; }
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 500; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--accent2);
+      margin-bottom: 18px;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 28px; height: 1px; background: var(--accent2);
+    }
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1; margin: 0 0 18px;
+      letter-spacing: -.02em; color: var(--ink);
+    }
+    .hero-bio {
+      font-size: 15.5px; color: var(--muted);
+      max-width: 560px; margin: 0 0 20px;
+      line-height: 1.7;
+    }
+    .research-interests {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
+    }
+    .ri-tag {
+      font-size: 12px; font-weight: 500;
+      padding: 4px 11px; border-radius: 4px;
+      background: var(--tag-bg); color: var(--tag-fg);
+      border: 1px solid #c9d7e8; letter-spacing: .01em;
+    }
+    .hero-links { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .hero-links a {
+      font-size: 13px; font-weight: 500;
+      color: var(--muted); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .hero-links a:hover { color: var(--ink); }
+    .hero-links a svg { flex-shrink: 0; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 60px 0; border-bottom: 1px solid var(--rule); }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--accent2);
+      margin-bottom: 6px;
+    }
+    h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(22px, 3.5vw, 30px);
+      margin: 0 0 32px; letter-spacing: -.02em;
+    }
+    h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 18px; margin: 0 0 14px;
+      letter-spacing: -.01em;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    /* ── RESEARCH PAPERS ── */
+    .paper-list { display: grid; gap: 20px; }
+    .paper {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 10px; padding: 22px 24px;
+      box-shadow: var(--shadow);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .paper:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 24px rgba(0,0,0,.1);
+    }
+    .paper-title {
+      font-size: 15px; font-weight: 600;
+      color: var(--ink); margin: 0 0 4px;
+      line-height: 1.4;
+    }
+    .paper-venue {
+      font-size: 13px; color: var(--muted);
+      font-style: italic; margin: 0 0 10px;
+    }
+    .paper-desc { font-size: 14px; color: var(--muted); margin: 0; }
+    .badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      padding: 2px 8px; border-radius: 4px; letter-spacing: .03em;
+      background: #eaf4ee; color: #1e6b3a; border: 1px solid #b5ddc3;
+      margin-bottom: 10px;
+    }
+    .badge.review {
+      background: #fef3e2; color: #92400e; border-color: #fcd299;
+    }
+
+    /* ── GRID LAYOUTS ── */
+    .grid-2 { display: grid; gap: 16px; }
+    @media (min-width: 620px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+    .grid-3 { display: grid; gap: 16px; }
+    @media (min-width: 700px) { .grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
+
+    /* ── HONORS ── */
+    .honor-item {
+      display: flex; align-items: baseline; gap: 12px;
+      padding: 12px 0; border-bottom: 1px solid var(--rule);
+    }
+    .honor-item:last-child { border-bottom: none; }
+    .honor-year {
+      font-size: 12px; font-weight: 600; color: var(--accent2);
+      min-width: 36px; letter-spacing: .03em;
+    }
+    .honor-name { font-size: 14.5px; }
+
+    /* ── SKILLS ── */
+    .skills-group { margin-bottom: 20px; }
+    .skills-group:last-child { margin-bottom: 0; }
+    .skills-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .07em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 9px;
+    }
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+    .skill-pill {
+      font-size: 13px; padding: 4px 12px; border-radius: 4px;
+      background: var(--tag-bg); border: 1px solid #c9d7e8;
+      color: var(--tag-fg); font-weight: 500;
+    }
+
+    /* ── SERVICE ── */
+    .service-item {
+      padding: 14px 0; border-bottom: 1px solid var(--rule);
+      display: grid; grid-template-columns: auto 1fr; gap: 12px;
+    }
+    .service-item:last-child { border-bottom: none; }
+    .service-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent2); margin-top: 9px; flex-shrink: 0;
+    }
+    .service-title { font-size: 14.5px; font-weight: 600; margin: 0 0 2px; }
+    .service-desc { font-size: 14px; color: var(--muted); margin: 0; }
+
+    /* ── TIMELINE ── */
+    .timeline { display: grid; gap: 0; position: relative; }
+    .timeline::before {
+      content: ''; position: absolute;
+      left: 80px; top: 0; bottom: 0; width: 1px;
+      background: var(--rule);
+    }
+    .tl-entry { display: grid; grid-template-columns: 80px 1fr; gap: 24px; padding: 20px 0; }
+    .tl-month {
+      font-size: 12px; font-weight: 600; letter-spacing: .04em;
+      text-transform: uppercase; color: var(--muted);
+      text-align: right; padding-top: 3px;
+    }
+    .tl-body { position: relative; }
+    .tl-body::before {
+      content: ''; position: absolute;
+      left: -32px; top: 9px;
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent2); border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--rule);
+    }
+    .tl-items { display: grid; gap: 7px; }
+    .tl-item { font-size: 14px; color: var(--ink); }
+
+    /* ── SCI COMM CARDS ── */
+    .scicomm-card {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 10px; padding: 20px 22px;
+      box-shadow: var(--shadow);
+      display: flex; flex-direction: column; gap: 8px;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .scicomm-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 24px rgba(0,0,0,.1);
+    }
+    .scicomm-card-title { font-size: 14.5px; font-weight: 600; margin: 0; }
+    .scicomm-card-desc { font-size: 13.5px; color: var(--muted); margin: 0; flex: 1; }
+    .read-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12.5px; font-weight: 600; color: var(--accent2);
+      text-decoration: none; letter-spacing: .01em;
+    }
+    .read-link:hover { text-decoration: underline; }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; gap: 10px; }
+    @media (min-width: 560px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+    .contact-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px;
+    }
+    .contact-item a { color: var(--accent); text-decoration: none; }
+    .contact-item a:hover { text-decoration: underline; }
+    .contact-icon {
+      width: 32px; height: 32px; border-radius: 7px;
+      background: var(--tag-bg); border: 1px solid #c9d7e8;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 32px 0; border-top: 1px solid var(--rule);
+      text-align: center; font-size: 13px; color: var(--muted);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { animation: fade-up .55s ease both; }
+    .fade-in:nth-child(2) { animation-delay: .08s; }
+    .fade-in:nth-child(3) { animation-delay: .16s; }
+    .fade-in:nth-child(4) { animation-delay: .24s; }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a href="https://mahveenraza10.github.io" class="brand">Mahveen Raza</a>
-      <nav class="links">
-        <a href="#achievements">Achievements</a>
-        <a href="#contributions">Contributions</a>
-        <a href="#articles">Blogs</a>
-        <a href="#papers">Publications</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#interests">Interests</a>
-        <a href="#contact">Contact</a>
-        <a class="btn primary" href="#resume">Resume</a>
-      </nav>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <div class="wrap-lg nav">
+    <a class="brand" href="#">Mahveen Raza</a>
+    <nav class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#scicomm">Writing</a>
+      <a href="#honors">Honors</a>
+      <a href="#skills">Skills</a>
+      <a href="#service">Service</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" href="assets/Mahveen_Raza_Resume.pdf" target="_blank" rel="noopener">CV ↓</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<div class="wrap">
+  <section id="home">
+    <div class="hero-grid">
+      <div class="fade-in">
+        <div class="hero-eyebrow">Grade 10 · HWDSB · Hamilton, Canada</div>
+        <h1>Mahveen<br>Raza</h1>
+        <p class="hero-bio">
+          High school researcher with papers accepted at NeurIPS 2025 workshops (GenProCC, Muslims in ML). My work spans AI sustainability, generative model bias, and responsible AI governance. I'm interested in making AI research accessible and building tools that help people reason about complex systems.
+        </p>
+
+        <div class="research-interests">
+          <span class="ri-tag">AI Sustainability &amp; Carbon Literacy</span>
+          <span class="ri-tag">Bias in Generative Models</span>
+          <span class="ri-tag">AI Safety &amp; Red-Teaming</span>
+          <span class="ri-tag">Responsible AI Governance</span>
+          <span class="ri-tag">Science Communication</span>
+        </div>
+
+        <div class="hero-links">
+          <a href="https://scholar.google.com/citations?user=Wb2KOooAAAAJ&hl=en" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Google Scholar
+          </a>
+          <span style="color:var(--rule)">|</span>
+          <a href="https://openreview.net/profile?id=%7EMahveen_Raza1" target="_blank" rel="noopener">OpenReview</a>
+          <span style="color:var(--rule)">|</span>
+          <a href="https://github.com/mahveenraza10" target="_blank" rel="noopener">GitHub</a>
+          <span style="color:var(--rule)">|</span>
+          <a href="https://medium.com/@mahveen.raza10" target="_blank" rel="noopener">Medium</a>
+          <span style="color:var(--rule)">|</span>
+          <a href="mailto:mahveen.raza10@gmail.com">mahveen.raza10@gmail.com</a>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="home" class="container">
-    <section class="card" style="margin-top:24px">
-      <p class="pill">High School Student · HWDSB · Hamilton, Canada</p>
-      <h1>Hi, I'm Mahveen.</h1>
-      <p>I’m a high school student in the Hamilton-Wentworth District School Board (HWDSB), located in Hamilton, Ontario, Canada. I enjoy building small, useful projects and learning new skills in technology and science. I’m currently looking for opportunities to learn, volunteer, and contribute.</p>
-      <div class="btnrow">
-        <a class="btn" href="#contact">Contact Me</a>
-      </div>
-    </section>
+  <!-- ═══════════════ RESEARCH ═══════════════ -->
+  <section id="research">
+    <div class="section-label">Peer-Reviewed Work</div>
+    <h2>Research &amp; Publications</h2>
 
-    <section id="achievements">
-      <h2>Achievements</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <ul class="clean">
-            <li><span class="dot"></span> Principals Award for Student Leadership (2024), HWDSB</li>
-            <li><span class="dot"></span> Academic Excellence (2024)</li>
-            <li><span class="dot"></span> Honour Roll (2024)</li>
-            <li><span class="dot"></span> Excellence Award in French and History</li>
-          </ul>
-        </div>
-        <div class="card">
-          <ul class="clean">
-            <li><span class="dot"></span> School Leadership: Student Voice and Leadership</li>
-            <li><span class="dot"></span> Wrote for a section for a magazine</li>
-            <li><span class="dot"></span> Podcast interview featured on Hamilton Spectator</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <div class="paper-list">
 
-    <section id="contributions">
-      <h2>Contributions</h2>
-      <div class="card">
-        <strong>Community & Volunteering</strong>
-        <ul class="clean" style="margin-top:10px">
-          <li><span class="dot"></span> Reading Buddy: helped younger children develop skills</li>
-          <li><span class="dot"></span> Mentoring: Helped peers with public speaking</li>
-          <li><span class="dot"></span> Podcast Manager, Marketing and Advertising team</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ARTICLES -->
-    <section id="articles">
-      <h2>Latest Blog Posts</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <strong>From Data to CO₂: The Hidden Climate Cost of Artificial Intelligence</strong>
-          <p>A short explainer on how AI models impact our planet and what steps can reduce their carbon footprint.</p>
-          <p>
-            <a class="btn" href="https://medium.com/@mahveen.raza10/from-data-to-co%E2%82%82-the-hidden-climate-cost-of-artificial-intelligence-176f8ead2dea" 
-               target="_blank" rel="noopener">Read on Medium</a>
-          </p>
-        </div>
-        <div class="card">
-          <strong>How AI Vaccines Work: Fine-Tuning, Prompt-Injection Defence, and Red-Teaming</strong>
-          <p>Explains how AI can be made safer through model tuning and prompt defense — inspired by vaccine science.</p>
-          <p>
-            <a class="btn" href="https://medium.com/@mahveen.raza10/how-ai-vaccines-work-fine-tuning-prompt-injection-defence-and-red-teaming-to-keep-ai-safe-257dda64a6d2"
-               target="_blank" rel="noopener">Read on Medium</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-     <section id="research">
-      <h2>Research & Publications</h2>
-      <div class="card">
-        <ul class="clean">
-          <li><span class="dot"></span>
-            <div><strong>Carbon Literacy for Generative AI: Visualizing Training Emissions Through Human-Scale Equivalents</strong> — 
-            <em>GenProCC Workshop @ NeurIPS 2025</em>
-            <div><span class="badge">Accepted</span></div>
-            <p>Designed visual tools to help people understand the carbon footprint of AI model training.</p></div>
-          </li>
-          <li><span class="dot"></span>
-            <div><strong>Prompting Away Stereotypes? Evaluating Bias in Text-to-Image Models for Occupations</strong> — 
-            <em>GenProCC Workshop @ NeurIPS 2025</em>
-            <div><span class="badge">Accepted</span></div>
-            <p>Studied how generative models depict occupations and how prompt design can reduce bias.</p></div>
-          </li>
-          <li><span class="dot"></span>
-            <div><strong>Large Vision Language Models as Algorithmic Reasoners for Multimodal Annotations</strong> — 
-            <em>Muslims in ML Workshop @ NeurIPS 2025</em>
-            <div><span class="badge">Accepted</span></div>
-            <p>Investigated reasoning abilities of vision-language models for inclusive multimodal annotations.</p></div>
-          </li>
-          <li><span class="dot"></span>
-            <div><strong>Bridging Governance and Technology: Data, Models, and Responsibility in Regulation</strong> — 
-            <em>Muslims in ML Workshop @ NeurIPS 2025</em>
-            <div><span class="badge">Accepted</span></div>
-            <p>Explored policy frameworks that connect responsible AI governance with practical model design.</p></div>
-          </li>
-          <li><span class="dot"></span>
-            <div><strong>Carbon Literacy for Generative AI: Visualizing Training Emissions Through Human-Scale Equivalents</strong> — 
-            <em>Muslims in ML Workshop @ NeurIPS 2025 @ NeurIPS 2025</em>
-            <div><span class="badge">Accepted</span></div>
-            <p>Extension of the GenProCC work</p></div>
-          </li>
-        </ul>
-</div>
-
-<!-- EDUCATIONAL MATERIALS (as part of Research) -->
-<h3 style="margin-top:40px;margin-bottom:16px;">Educational Materials · NeurIPS 2025 Educational Program</h3>
-<div class="grid cols-2">
-  <div class="card">
-    <strong>From Data to CO₂: The Hidden Climate Cost of Artificial Intelligence</strong>
-    <p>Educational activity explaining the environmental impact of AI systems by connecting training emissions to everyday human-scale equivalents.</p>
-  </div>
-
-  <div class="card">
-    <strong>How AI Vaccines Work: Fine-Tuning, Prompt Injection Defense, and Red-Teaming to Keep AI Safe</strong>
-    <p>A teaching module on responsible AI and model safety, demonstrating how AI can be fine-tuned and defended from harmful prompts.</p>
-  </div>
-
-  <div class="card">
-    <strong>Next Token Prediction in Decoder-Only Models</strong>
-    <p>A hands-on visualization module illustrating how large language models predict tokens step-by-step, designed for classroom learning.</p>
-  </div>
-
-  <div class="card">
-    <strong>Inside Recommender Systems: How They Work and Why They Matter</strong>
-    <p>An educational resource introducing recommender systems and exploring their applications, ethics, and social impact.</p>
-  </div>
-</div>
-</section>
-
-
-    <!-- TIMELINE -->
-<section id="timeline">
-  <h2>Timeline</h2>
-  <div class="card" style="padding:40px;">
-    <div style="display:flex;flex-direction:column;gap:24px;">
-      
-      <!-- JULY (earliest at bottom) -->
-      <div>
-        <div class="month-title">July 2025</div>
-        <ul class="clean">
-          <li><span class="dot"></span> Volunteered at library helping young students with reading skills.</li>
-        </ul>
+      <div class="paper fade-in">
+        <div class="badge">Accepted</div>
+        <div class="paper-title">Carbon Literacy for Generative AI: Visualizing Training Emissions Through Human-Scale Equivalents</div>
+        <div class="paper-venue">GenProCC Workshop @ NeurIPS 2025 &nbsp;·&nbsp; Muslims in ML Workshop @ NeurIPS 2025</div>
+        <div class="paper-desc">Designed visual tools that translate the carbon footprint of AI model training into everyday human-scale equivalents, making environmental costs legible to a general audience.</div>
       </div>
 
-      <!-- AUGUST -->
-      <div>
-        <div class="month-title">August 2025</div>
-        <ul class="clean">
-          <li><span class="dot"></span> Began creating educational materials including video explantaion, article, interactive visulaizer, and infographic for Green AI for students to understand</li>
-          <li><span class="dot"></span> Wrote my first paper on Carbon Literacy for Generative AI: Visualizing Training Emissions Through Human-Scale Equivalents for GenProCC.</li>
-          <li><span class="dot"></span> Created educational materials including article, interactive visualizer, video, and infographic on the topic of Prompt injections using human vaccine as a comparsion.</li>
-          <li><span class="dot"></span> Created educational materials on recommender systems including an animated video, HuggingFace interactive simulation, and infographic</li>
-          <li><span class="dot"></span> Created a final submission to educational materials for neurips on next-token prediction systems incluidng a video, demo, and infographic</li>
-          <li><span class="dot"></span> Did experiements on bias generated by AI systems</li>
-        </ul>
+      <div class="paper fade-in">
+        <div class="badge">Accepted</div>
+        <div class="paper-title">Prompting Away Stereotypes? Evaluating Bias in Text-to-Image Models for Occupations</div>
+        <div class="paper-venue">GenProCC Workshop @ NeurIPS 2025</div>
+        <div class="paper-desc">Studied how generative image models depict occupations across gender and race, and evaluated whether prompt engineering can meaningfully reduce stereotypical outputs.</div>
       </div>
 
-      <!-- SEPTEMBER -->
-      <div>
-        <div class="month-title">September 2025</div>
-        <ul class="clean">
-          <li><span class="dot"></span> Started Grade 10 and joined the school Robotics Club.</li>
-          <li><span class="dot"></span> Notifcations of acceptance from Neurips educational materials and GenProCC and Musliums in ML workshops</li>
-          <li><span class="dot"></span> Wrote blog posts from previous works on Medium titled: From Data to CO₂: The Hidden Climate Cost of Artificial Intelligence and How AI Vaccines Work: Fine‑Tuning, Prompt Injection Defence, and Red‑Teaming to Keep AI Safe .</li>
-          <li><span class="dot"></span> Lead and founded Model UN club at School </li>
-        </ul>
+      <div class="paper fade-in">
+        <div class="badge">Accepted</div>
+        <div class="paper-title">Large Vision Language Models as Algorithmic Reasoners for Multimodal Annotations</div>
+        <div class="paper-venue">Muslims in ML Workshop @ NeurIPS 2025</div>
+        <div class="paper-desc">Investigated the structured reasoning abilities of vision-language models and their potential for improving inclusive, multimodal annotation pipelines.</div>
       </div>
 
-      <!-- OCTOBER (latest at top) -->
-      <div>
-        <div class="month-title">October 2025</div>
-        <ul class="clean">
-          <li><span class="dot"></span> Preparing camera-ready versions for eductaional materials and workshop papers.</li>
-          <li><span class="dot"></span> Working on experiments for an upcoming research paper on policies.</li>
-          <li><span class="dot"></span> Submitted a Statement of Interest for IASEAI'26.</li>
+      <div class="paper fade-in">
+        <div class="badge">Accepted</div>
+        <div class="paper-title">Bridging Governance and Technology: Data, Models, and Responsibility in Regulation</div>
+        <div class="paper-venue">Muslims in ML Workshop @ NeurIPS 2025</div>
+        <div class="paper-desc">Explored policy frameworks that connect responsible AI governance with practical decisions in model design and data collection.</div>
+      </div>
 
-        </ul>
+      <div class="paper fade-in">
+        <div class="badge review">Under Review</div>
+        <div class="paper-title">Statement of Interest — IASEAI'26</div>
+        <div class="paper-venue">International AI Safety, Ethics, and Alignment Institute · 2026</div>
+        <div class="paper-desc">Submitted a statement of interest focusing on alignment between governance frameworks and technical AI safety research.</div>
       </div>
 
     </div>
-  </div>
-</section>
 
-    
-    <section id="interests">
-      <h2>Interests & Hobbies</h2>
-      <div class="card">
-        <ul class="clean">
-          <li><span class="dot"></span> Coding small web pages and tools</li>
-          <li><span class="dot"></span>  Writing scientfiic blogs</li>
-          <li><span class="dot"></span> Exploring Robotics </li>
-          <li><span class="dot"></span> Reading science articles & biographies</li
-          <li><span class="dot"></span> Research projects</li>
-        </ul>
+    <!-- Educational Materials sub-section -->
+    <h3 style="margin-top:48px; margin-bottom:20px;">Educational Materials · NeurIPS 2025 Educational Program</h3>
+    <div class="grid-2">
+      <div class="card fade-in">
+        <div style="font-size:14.5px;font-weight:600;margin-bottom:6px;">From Data to CO₂: The Hidden Climate Cost of AI</div>
+        <div style="font-size:13.5px;color:var(--muted);">Activity connecting AI training emissions to everyday equivalents. Includes interactive visualizer, video, and infographic.</div>
       </div>
-    </section>
-
-    <section id="resume">
-      <h2>Resume</h2>
-      <div class="card" style="display:flex;flex-direction:column;gap:12px">
-        <p>View or download my full resume below.</p>
-        <iframe src="assets/Mahveen_Raza_Resume.pdf" width="100%" height="600" style="border:1px solid var(--border);border-radius:8px"></iframe>
-        <a class="btn primary" href="assets/Mahveen_Raza_Resume.pdf" target="_blank" rel="noopener">Download PDF</a>
+      <div class="card fade-in">
+        <div style="font-size:14.5px;font-weight:600;margin-bottom:6px;">How AI Vaccines Work: Fine-Tuning, Prompt Injection Defense, and Red-Teaming</div>
+        <div style="font-size:13.5px;color:var(--muted);">Teaching module on model safety using the biological vaccine as a conceptual analogy. Includes article, visualizer, and video.</div>
       </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>Email: <a href="mailto:mahveen.raza10@gmail.com">mahveen.raza10@gmail.com</a></p>
-        <p>Google Scholar: <a href="https://scholar.google.com/citations?user=Wb2KOooAAAAJ&hl=en">View Profile</a></p>
-        <p>Open Review: <a href="https://openreview.net/profile?id=%7EMahveen_Raza1">Mahveen_Raza1</a></p>
-        <p>GitHub: <a href="https://github.com/mahveenraza10">mahveenraza10</a></p>
-        <p>Website: <a href="https://mahveenraza10.github.io">mahveenraza10.github.io</a></p>
-        
+      <div class="card fade-in">
+        <div style="font-size:14.5px;font-weight:600;margin-bottom:6px;">Next Token Prediction in Decoder-Only Models</div>
+        <div style="font-size:13.5px;color:var(--muted);">Hands-on visualization module illustrating how large language models predict tokens step-by-step, designed for classroom use.</div>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <small>© <span id="year"></span> Mahveen Raza · HWDSB · Hamilton, Canada</small>
+      <div class="card fade-in">
+        <div style="font-size:14.5px;font-weight:600;margin-bottom:6px;">Inside Recommender Systems: How They Work and Why They Matter</div>
+        <div style="font-size:13.5px;color:var(--muted);">Introduces recommender systems and their applications, ethics, and social impact. Includes animated video and HuggingFace simulation.</div>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <!-- ═══════════════ SCI COMM ═══════════════ -->
+  <section id="scicomm">
+    <div class="section-label">Science Communication</div>
+    <h2>Writing &amp; Media</h2>
+    <div class="grid-2">
+      <div class="scicomm-card fade-in">
+        <div class="scicomm-card-title">From Data to CO₂: The Hidden Climate Cost of Artificial Intelligence</div>
+        <div class="scicomm-card-desc">A public explainer on how AI model training and inference contribute to carbon emissions, and what steps organizations and researchers can take to reduce their footprint.</div>
+        <a class="read-link" href="https://medium.com/@mahveen.raza10/from-data-to-co%E2%82%82-the-hidden-climate-cost-of-artificial-intelligence-176f8ead2dea" target="_blank" rel="noopener">Read on Medium →</a>
+      </div>
+      <div class="scicomm-card fade-in">
+        <div class="scicomm-card-title">How AI Vaccines Work: Fine-Tuning, Prompt-Injection Defence, and Red-Teaming</div>
+        <div class="scicomm-card-desc">Explains AI safety techniques — fine-tuning, prompt-injection defense, and red-teaming — through the intuitive lens of biological vaccine science.</div>
+        <a class="read-link" href="https://medium.com/@mahveen.raza10/how-ai-vaccines-work-fine-tuning-prompt-injection-defence-and-red-teaming-to-keep-ai-safe-257dda64a6d2" target="_blank" rel="noopener">Read on Medium →</a>
+      </div>
+      <div class="scicomm-card fade-in">
+        <div class="scicomm-card-title">Podcast Interview — Featured in the Hamilton Spectator</div>
+        <div class="scicomm-card-desc">An interview covering student perspectives on technology and community engagement, featured in Hamilton's main newspaper.</div>
+      </div>
+      <div class="scicomm-card fade-in">
+        <div class="scicomm-card-title">Magazine Contributor</div>
+        <div class="scicomm-card-desc">Wrote a featured section for a student magazine covering topics at the intersection of technology and society.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ HONORS ═══════════════ -->
+  <section id="honors">
+    <div class="section-label">Recognition</div>
+    <h2>Honors &amp; Awards</h2>
+    <div class="card">
+      <div class="honor-item">
+        <div class="honor-year">2024</div>
+        <div class="honor-name">Principal's Award for Student Leadership — HWDSB</div>
+      </div>
+      <div class="honor-item">
+        <div class="honor-year">2024</div>
+        <div class="honor-name">Academic Excellence Award</div>
+      </div>
+      <div class="honor-item">
+        <div class="honor-year">2024</div>
+        <div class="honor-name">Honour Roll</div>
+      </div>
+      <div class="honor-item">
+        <div class="honor-year">2024</div>
+        <div class="honor-name">Excellence Award in French &amp; History</div>
+      </div>
+      <div class="honor-item">
+        <div class="honor-year">2025</div>
+        <div class="honor-name">4 papers accepted at NeurIPS 2025 Workshops (GenProCC, Muslims in ML)</div>
+      </div>
+      <div class="honor-item">
+        <div class="honor-year">2025</div>
+        <div class="honor-name">4 educational materials accepted — NeurIPS 2025 Educational Program</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <section id="skills">
+    <div class="section-label">Technical &amp; Research</div>
+    <h2>Skills</h2>
+    <div class="card">
+      <div class="skills-group">
+        <div class="skills-label">Programming</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">HTML &amp; CSS</span>
+          <span class="skill-pill">JavaScript</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-label">Research &amp; Tools</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Experimental Design</span>
+          <span class="skill-pill">Data Analysis</span>
+          <span class="skill-pill">Literature Review</span>
+          <span class="skill-pill">Academic Writing</span>
+          <span class="skill-pill">LaTeX</span>
+          <span class="skill-pill">HuggingFace</span>
+          <span class="skill-pill">OpenReview</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-label">Communication</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Science Writing</span>
+          <span class="skill-pill">Data Visualization</span>
+          <span class="skill-pill">Public Speaking</span>
+          <span class="skill-pill">Infographic Design</span>
+          <span class="skill-pill">Video Production</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <div class="skills-label">Languages</div>
+        <div class="skill-pills">
+          <span class="skill-pill">English (Native)</span>
+          <span class="skill-pill">French</span>
+          <span class="skill-pill">Urdu</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SERVICE ═══════════════ -->
+  <section id="service">
+    <div class="section-label">Community &amp; Leadership</div>
+    <h2>Service &amp; Outreach</h2>
+    <div class="card">
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-title">Founder &amp; President — Model UN Club</div>
+          <div class="service-desc">Founded and led the Model UN club at school. Organized debates, coached members on parliamentary procedure and argumentation.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-title">Student Voice and Leadership</div>
+          <div class="service-desc">Elected to school leadership program, representing student perspectives in school-wide decision-making.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-title">Robotics Club — Member</div>
+          <div class="service-desc">Active member of the school Robotics Club, working on hardware and software integration projects.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-title">Volunteer — Residential Care Homes</div>
+          <div class="service-desc">Volunteered regularly at local residential homes, providing companionship and activity support for residents.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-title">Volunteer — Baseball Clinic</div>
+          <div class="service-desc">Assisted coaches at a community baseball clinic, helping organize drills and supporting younger participants.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-title">Reading Buddy — Public Library</div>
+          <div class="service-desc">Worked one-on-one with younger children at the local library to develop literacy and reading confidence.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-title">Peer Mentor — Public Speaking</div>
+          <div class="service-desc">Mentored classmates preparing for speeches and presentations, providing structured feedback and practice sessions.</div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <div>
+          <div class="service-title">Podcast Manager — Marketing &amp; Advertising Team</div>
+          <div class="service-desc">Managed production schedule, guest coordination, and social media promotion for a school podcast.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TIMELINE ═══════════════ -->
+  <section id="timeline">
+    <div class="section-label">Activity Log</div>
+    <h2>Timeline</h2>
+    <div class="card" style="padding: 28px 32px 28px;">
+      <div class="timeline">
+
+        <div class="tl-entry">
+          <div class="tl-month">Jul 2025</div>
+          <div class="tl-body">
+            <div class="tl-items">
+              <div class="tl-item">Volunteered at local library helping young students develop reading skills.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-month">Aug 2025</div>
+          <div class="tl-body">
+            <div class="tl-items">
+              <div class="tl-item">Created educational materials (video, article, interactive visualizer, infographic) on Green AI for a student audience.</div>
+              <div class="tl-item">Wrote first paper: <em>Carbon Literacy for Generative AI</em> — submitted to GenProCC @ NeurIPS 2025.</div>
+              <div class="tl-item">Created educational materials on prompt injection defense using biological vaccine as an analogy.</div>
+              <div class="tl-item">Built educational materials on recommender systems: animated video, HuggingFace simulation, and infographic.</div>
+              <div class="tl-item">Completed NeurIPS educational submission on next-token prediction: video, demo, and infographic.</div>
+              <div class="tl-item">Ran bias evaluation experiments on generative AI image models.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-month">Sep 2025</div>
+          <div class="tl-body">
+            <div class="tl-items">
+              <div class="tl-item">Started Grade 10; joined the school Robotics Club.</div>
+              <div class="tl-item">Received acceptance notifications from NeurIPS Educational Program and GenProCC &amp; Muslims in ML workshops.</div>
+              <div class="tl-item">Published two blog posts on Medium: <em>From Data to CO₂</em> and <em>How AI Vaccines Work</em>.</div>
+              <div class="tl-item">Founded and launched the school's Model UN club.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-month">Oct 2025</div>
+          <div class="tl-body">
+            <div class="tl-items">
+              <div class="tl-item">Prepared camera-ready versions of educational materials and workshop papers for NeurIPS 2025.</div>
+              <div class="tl-item">Began experiments for an upcoming paper on AI policy frameworks.</div>
+              <div class="tl-item">Submitted a Statement of Interest for IASEAI'26.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section id="contact">
+    <div class="section-label">Get in Touch</div>
+    <h2>Contact</h2>
+    <div class="card">
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          </div>
+          <a href="mailto:mahveen.raza10@gmail.com">mahveen.raza10@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <a href="https://scholar.google.com/citations?user=Wb2KOooAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <a href="https://github.com/mahveenraza10" target="_blank" rel="noopener">mahveenraza10</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <a href="https://openreview.net/profile?id=%7EMahveen_Raza1" target="_blank" rel="noopener">OpenReview Profile</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <a href="https://mahveenraza10.github.io" target="_blank" rel="noopener">mahveenraza10.github.io</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <a href="https://medium.com/@mahveen.raza10" target="_blank" rel="noopener">Medium Articles</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /wrap -->
+
+<footer>
+  <div class="wrap">
+    <small>© <span id="yr"></span> Mahveen Raza · HWDSB · Hamilton, Canada</small>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
