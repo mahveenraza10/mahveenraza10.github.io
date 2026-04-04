@@ -21,11 +21,11 @@
       --tag-fg:  #1a3a5c;
       --shadow:  0 1px 3px rgba(0,0,0,.06), 0 6px 20px rgba(0,0,0,.07);
     }
-
+ 
     *, *::before, *::after { box-sizing: border-box; }
-
+ 
     html { scroll-behavior: smooth; }
-
+ 
     body {
       margin: 0;
       font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
@@ -34,11 +34,11 @@
       background: var(--bg);
       color: var(--ink);
     }
-
+ 
     /* ── LAYOUT ── */
     .wrap   { max-width: 860px; margin: 0 auto; padding: 0 20px; }
     .wrap-lg { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-
+ 
     /* ── HEADER ── */
     header {
       position: sticky; top: 0; z-index: 50;
@@ -77,7 +77,7 @@
       transition: background .15s, color .15s;
     }
     .nav-links .cta:hover { background: var(--accent2); color: #fff; }
-
+ 
     /* ── HERO ── */
     #home {
       padding: 72px 0 56px;
@@ -129,11 +129,11 @@
     }
     .hero-links a:hover { color: var(--ink); }
     .hero-links a svg { flex-shrink: 0; }
-
+ 
     /* ── SECTION BASE ── */
     section { padding: 60px 0; border-bottom: 1px solid var(--rule); }
     section:last-of-type { border-bottom: none; }
-
+ 
     .section-label {
       font-size: 11px; font-weight: 600; letter-spacing: .1em;
       text-transform: uppercase; color: var(--accent2);
@@ -149,7 +149,7 @@
       font-size: 18px; margin: 0 0 14px;
       letter-spacing: -.01em;
     }
-
+ 
     /* ── CARDS ── */
     .card {
       background: var(--paper);
@@ -158,7 +158,7 @@
       padding: 22px 24px;
       box-shadow: var(--shadow);
     }
-
+ 
     /* ── RESEARCH PAPERS ── */
     .paper-list { display: grid; gap: 20px; }
     .paper {
@@ -191,13 +191,13 @@
     .badge.review {
       background: #fef3e2; color: #92400e; border-color: #fcd299;
     }
-
+ 
     /* ── GRID LAYOUTS ── */
     .grid-2 { display: grid; gap: 16px; }
     @media (min-width: 620px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
     .grid-3 { display: grid; gap: 16px; }
     @media (min-width: 700px) { .grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
-
+ 
     /* ── HONORS ── */
     .honor-item {
       display: flex; align-items: baseline; gap: 12px;
@@ -209,7 +209,7 @@
       min-width: 36px; letter-spacing: .03em;
     }
     .honor-name { font-size: 14.5px; }
-
+ 
     /* ── SKILLS ── */
     .skills-group { margin-bottom: 20px; }
     .skills-group:last-child { margin-bottom: 0; }
@@ -223,7 +223,7 @@
       background: var(--tag-bg); border: 1px solid #c9d7e8;
       color: var(--tag-fg); font-weight: 500;
     }
-
+ 
     /* ── SERVICE ── */
     .service-item {
       padding: 14px 0; border-bottom: 1px solid var(--rule);
@@ -236,7 +236,7 @@
     }
     .service-title { font-size: 14.5px; font-weight: 600; margin: 0 0 2px; }
     .service-desc { font-size: 14px; color: var(--muted); margin: 0; }
-
+ 
     /* ── TIMELINE ── */
     .timeline { display: grid; gap: 0; position: relative; }
     .timeline::before {
@@ -260,7 +260,7 @@
     }
     .tl-items { display: grid; gap: 7px; }
     .tl-item { font-size: 14px; color: var(--ink); }
-
+ 
     /* ── SCI COMM CARDS ── */
     .scicomm-card {
       background: var(--paper);
@@ -282,7 +282,7 @@
       text-decoration: none; letter-spacing: .01em;
     }
     .read-link:hover { text-decoration: underline; }
-
+ 
     /* ── CONTACT ── */
     .contact-grid { display: grid; gap: 10px; }
     @media (min-width: 560px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
@@ -298,13 +298,13 @@
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; color: var(--accent);
     }
-
+ 
     /* ── FOOTER ── */
     footer {
       padding: 32px 0; border-top: 1px solid var(--rule);
       text-align: center; font-size: 13px; color: var(--muted);
     }
-
+ 
     /* ── ANIMATIONS ── */
     @keyframes fade-up {
       from { opacity: 0; transform: translateY(18px); }
@@ -317,7 +317,7 @@
   </style>
 </head>
 <body>
-
+ 
 <!-- ═══════════════ HEADER ═══════════════ -->
 <header>
   <div class="wrap-lg nav">
@@ -334,7 +334,7 @@
     </nav>
   </div>
 </header>
-
+ 
 <!-- ═══════════════ HERO ═══════════════ -->
 <div class="wrap">
   <section id="home">
@@ -345,7 +345,7 @@
         <p class="hero-bio">
           High school researcher with 4 papers accepted at NeurIPS 2025 workshops (GenProCC, Muslims in ML) and a presentation at NeurIPS 2025 in San Diego. My work spans AI sustainability, generative model bias, deepfake detection, and responsible AI governance. I'm interested in making AI research accessible and building tools that help people reason about complex systems.
         </p>
-
+ 
         <div class="research-interests">
           <span class="ri-tag">AI Sustainability &amp; Carbon Literacy</span>
           <span class="ri-tag">Bias in Generative Models</span>
@@ -354,7 +354,7 @@
           <span class="ri-tag">Responsible AI Governance</span>
           <span class="ri-tag">Science Communication</span>
         </div>
-
+ 
         <div class="hero-links">
           <a href="https://scholar.google.com/citations?user=Wb2KOooAAAAJ&hl=en" target="_blank" rel="noopener">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
@@ -372,51 +372,51 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ═══════════════ RESEARCH ═══════════════ -->
   <section id="research">
     <div class="section-label">Peer-Reviewed Work</div>
     <h2>Research &amp; Publications</h2>
-
+ 
     <div class="paper-list">
-
+ 
       <div class="paper fade-in">
         <div class="badge">Accepted</div>
         <div class="paper-title">Carbon Literacy for Generative AI: Visualizing Training Emissions Through Human-Scale Equivalents</div>
         <div class="paper-venue">GenProCC Workshop @ NeurIPS 2025 &nbsp;·&nbsp; Muslims in ML Workshop @ NeurIPS 2025</div>
         <div class="paper-desc">Designed visual tools that translate the carbon footprint of AI model training into everyday human-scale equivalents, making environmental costs legible to a general audience.</div>
       </div>
-
+ 
       <div class="paper fade-in">
         <div class="badge">Accepted</div>
         <div class="paper-title">Prompting Away Stereotypes? Evaluating Bias in Text-to-Image Models for Occupations</div>
         <div class="paper-venue">GenProCC Workshop @ NeurIPS 2025</div>
         <div class="paper-desc">Studied how generative image models depict occupations across gender and race, and evaluated whether prompt engineering can meaningfully reduce stereotypical outputs.</div>
       </div>
-
+ 
       <div class="paper fade-in">
         <div class="badge">Accepted</div>
         <div class="paper-title">Large Vision Language Models as Algorithmic Reasoners for Multimodal Annotations</div>
         <div class="paper-venue">Muslims in ML Workshop @ NeurIPS 2025</div>
         <div class="paper-desc">Investigated the structured reasoning abilities of vision-language models and their potential for improving inclusive, multimodal annotation pipelines.</div>
       </div>
-
+ 
       <div class="paper fade-in">
         <div class="badge">Accepted</div>
         <div class="paper-title">Bridging Governance and Technology: Data, Models, and Responsibility in Regulation</div>
         <div class="paper-venue">Muslims in ML Workshop @ NeurIPS 2025</div>
         <div class="paper-desc">Explored policy frameworks that connect responsible AI governance with practical decisions in model design and data collection.</div>
       </div>
-
+ 
       <div class="paper fade-in">
         <div class="badge review">In Preparation · ICML Target</div>
         <div class="paper-title">Deepfake Detection — [Title TBD]</div>
         <div class="paper-venue">Target: ICML 2026</div>
         <div class="paper-desc">Current research project investigating deepfake detection methods. Experiments ongoing; paper in preparation.</div>
       </div>
-
+ 
     </div>
-
+ 
     <!-- Educational Materials sub-section -->
     <h3 style="margin-top:48px; margin-bottom:20px;">Educational Materials · NeurIPS 2025 Educational Program</h3>
     <div class="grid-2">
@@ -440,7 +440,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ═══════════════ SCI COMM ═══════════════ -->
   <section id="scicomm">
     <div class="section-label">Science Communication</div>
@@ -466,7 +466,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ═══════════════ HONORS ═══════════════ -->
   <section id="honors">
     <div class="section-label">Recognition</div>
@@ -502,7 +502,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ═══════════════ SKILLS ═══════════════ -->
   <section id="skills">
     <div class="section-label">Technical &amp; Research</div>
@@ -555,13 +555,13 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ═══════════════ SERVICE ═══════════════ -->
   <section id="service">
     <div class="section-label">Community &amp; Leadership</div>
     <h2>Service &amp; Outreach</h2>
     <div class="card">
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -569,7 +569,7 @@
           <div class="service-desc">Member of the Hamilton-Wentworth District School Board's Inclusion, Equity, and Safe Schools Coordinating Committee. Advocated for board-wide solutions addressing inclusion of students of colour, and planned school board-wide breakout sessions and events focused on mental health.</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -577,7 +577,7 @@
           <div class="service-desc">Co-founded and serve as Vice President of the school's Model UN club. Managed budgets, expenses, and event coordination; coached members on parliamentary procedure and argumentation.</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -585,7 +585,7 @@
           <div class="service-desc">Multi-year member of the school leadership program. Keynote speaker at Positive School Culture assemblies. Article featured in <em>Teacher Librarians</em> magazine (2022–2023).</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -593,7 +593,7 @@
           <div class="service-desc">Participated in board-level discussions to improve schools through student voice. Advocated for solutions to system-wide equity issues.</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -601,7 +601,7 @@
           <div class="service-desc">Creates promotional content and manages social media to build the club's presence and support recruitment.</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -609,7 +609,7 @@
           <div class="service-desc">Led team to publish multiple podcast episodes. Wrote scripts, recorded and produced episodes featuring guests including the Mayor of Hamilton and HWDSB representatives. Edited using CapCut to improve audio quality and audience engagement.</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -617,7 +617,7 @@
           <div class="service-desc">Researched local businesses aligned with school initiatives. Presented sponsorship proposals to potential partners to increase school funding.</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -625,7 +625,7 @@
           <div class="service-desc">Assists residents with day-to-day activities and plans and organizes recreational events.</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -633,7 +633,7 @@
           <div class="service-desc">Assisted young children with reading skills and confidence building in a structured one-on-one setting.</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -641,7 +641,7 @@
           <div class="service-desc">Wrote book reviews and promoted library resources to encourage reading among youth patrons.</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -649,7 +649,7 @@
           <div class="service-desc">Assisted primary classrooms and supported educators with preparation, organization, and student engagement.</div>
         </div>
       </div>
-
+ 
       <div class="service-item">
         <div class="service-dot"></div>
         <div>
@@ -657,17 +657,17 @@
           <div class="service-desc">Mentored classmates preparing for speeches and presentations, providing structured feedback and practice sessions.</div>
         </div>
       </div>
-
+ 
     </div>
   </section>
-
+ 
   <!-- ═══════════════ TIMELINE ═══════════════ -->
   <section id="timeline">
     <div class="section-label">Activity Log</div>
     <h2>Timeline</h2>
     <div class="card" style="padding: 28px 32px 28px;">
       <div class="timeline">
-
+ 
         <div class="tl-entry">
           <div class="tl-month">Jul 2025</div>
           <div class="tl-body">
@@ -676,7 +676,7 @@
             </div>
           </div>
         </div>
-
+ 
         <div class="tl-entry">
           <div class="tl-month">Aug 2025</div>
           <div class="tl-body">
@@ -690,7 +690,7 @@
             </div>
           </div>
         </div>
-
+ 
         <div class="tl-entry">
           <div class="tl-month">Sep 2025</div>
           <div class="tl-body">
@@ -702,7 +702,7 @@
             </div>
           </div>
         </div>
-
+ 
         <div class="tl-entry">
           <div class="tl-month">Oct 2025</div>
           <div class="tl-body">
@@ -712,7 +712,7 @@
             </div>
           </div>
         </div>
-
+ 
         <div class="tl-entry">
           <div class="tl-month">Dec 2025</div>
           <div class="tl-body">
@@ -721,7 +721,7 @@
             </div>
           </div>
         </div>
-
+ 
         <div class="tl-entry">
           <div class="tl-month">Jan 2026</div>
           <div class="tl-body">
@@ -731,7 +731,7 @@
             </div>
           </div>
         </div>
-
+ 
         <div class="tl-entry">
           <div class="tl-month">Mar 2026</div>
           <div class="tl-body">
@@ -741,11 +741,11 @@
             </div>
           </div>
         </div>
-
+ 
       </div>
     </div>
   </section>
-
+ 
   <!-- ═══════════════ CONTACT ═══════════════ -->
   <section id="contact">
     <div class="section-label">Get in Touch</div>
@@ -781,3 +781,4 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <a href="https://mahveenraza10.github.io" target="_blank" rel="noopener">mahveenraza10.github.io</a>
+        
